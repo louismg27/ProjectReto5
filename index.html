@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./js/index.js">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        /*
+*
+* ==========================================
+* CUSTOM UTIL CLASSES
+* ==========================================
+*
+*/
+
+        /* Rounded tabs */
+
+        @media (min-width: 576px) {
+            .rounded-nav {
+                border-radius: 10rem !important;
+            }
+        }
+
+        @media (min-width: 576px) {
+            .rounded-nav .nav-link {
+                border-radius: 10rem !important;
+            }
+        }
+
+        /* With arrow tabs */
+
+        .with-arrow .nav-link.active {
+            position: relative;
+        }
+
+        .with-arrow .nav-link.active::after {
+            content: '';
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 6px solid #2b90d9;
+            position: absolute;
+            bottom: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: block;
+        }
+
+        /* lined tabs */
+
+        .lined .nav-link {
+            border: none;
+            border-bottom: 3px solid transparent;
+        }
+
+        .lined .nav-link:hover {
+            border: none;
+            border-bottom: 3px solid transparent;
+        }
+
+        .lined .nav-link.active {
+            background: none;
+            color: #555;
+            border-color: #2b90d9;
+        }
+
+        /*
+*
+* ==========================================
+* FOR DEMO PURPOSE
+* ==========================================
+*
+*/
+
+        body {
+            background: #304352;
+            background: -webkit-linear-gradient(to right, #304352, #d7d2cc);
+            background: linear-gradient(to right, #304352, #d7d2cc);
+            min-height: 100vh;
+        }
+
+        .nav-pills .nav-link {
+            color: #555;
+        }
+
+        .text-uppercase {
+            letter-spacing: 0.1em;
+        }
+
+
+
+
+
+        /* Style the tab */
+        .tab {
+            overflow: hidden;
+            border: 1px solid #2b2727;
+            background-color: #1a1818a2;
+            border-radius: 10px;
+            height: 40px;
+        }
+
+        /* Style the buttons inside the tab */
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 9px 16px;
+            transition: 0.3s;
+            font-size: 16px;
+            font-weight: bold;
+            color: rgb(255, 255, 255);
+            height: 40px;
+        }
+
+        /* Change background color of buttons on hover */
+        .tab button:hover {
+            /* background-color:  #94c1e4; */
+            border: none;
+            border-bottom: 0px solid transparent;
+            color: rgb(243, 54, 54);
+
+        }
+
+        /* Create an active/current tablink class */
+        .tab button.active {
+            background-color: rgb(211, 76, 76);
+            border: 1px solid #ff8e8e;
+        }
+
+        /* Style the tab content */
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        HEADER
+    </header>
+
+    <main class="main">
+
+        <section class="foods" id="foods">
+
+
+            <div class="foods__container">
+
+
+
+                <div class="tab">
+                    <button class="tablinks" onclick="openCity(event, 'London')">London</button>
+                    <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+                    <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+                </div>
+
+
+                <div id="London" class="tabcontent">
+
+                    <div class="foods__me-container" id="foods1container"></div>
+
+
+                </div>
+
+                <div id="Paris" class="tabcontent">
+
+
+                    <div class="foods__me-container" id="foods2container"></div>
+
+
+                </div>
+
+                <div id="Tokyo" class="tabcontent">
+
+
+                    <div class="foods__me-container" id="foods3container"></div>
+                  
+
+
+                </div>
+
+
+
+
+                <div class="container py-1">
+
+                    <!-- End -->
+                    <div class="p-2 bg-white rounded shadow mb-2">
+                        <!-- Rounded tabs -->
+                        <ul id="myTab" role="tablist"
+                            class="nav nav-tabs nav-pills flex-column flex-sm-row text-center bg-light border-0 rounded-nav">
+                            <li class="nav-item flex-sm-fill">
+                                <a id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+                                    aria-selected="false"
+                                    class="nav-link border-0 text-uppercase font-weight-bold active">Home</a>
+                            </li>
+                            <li class="nav-item flex-sm-fill">
+                                <a id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+                                    aria-selected="false"
+                                    class="nav-link border-0 text-uppercase font-weight-bold">Profile</a>
+                            </li>
+                            <li class="nav-item flex-sm-fill">
+                                <a id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
+                                    aria-selected="false"
+                                    class="nav-link border-0 text-uppercase font-weight-bold">Contact</a>
+                            </li>
+                        </ul>
+
+                        <div id="myTabContent" class="tab-content">
+                            <div id="home" role="tabpanel" aria-labelledby="home-tab" class="tab-pane fade px-4 py-5">
+                                <div class="foods__me-container" id="foods1container"></div>
+                            </div>
+                            <div id="profile" role="tabpanel" aria-labelledby="profile-tab"
+                                class="tab-pane fade px-4 py-5">
+                                <div class="foods__me-container" id="foods2container"></div>
+                            </div>
+                            <div id="contact" role="tabpanel" aria-labelledby="contact-tab"
+                                class="tab-pane fade px-4 py-5">
+                                <div class="foods__me-container" id="foods3container"></div>
+                            </div>
+                        </div>
+                        <!-- End rounded tabs -->
+                    </div>
+
+
+
+                </div>
+
+
+
+
+
+
+            </div>
+        </section>
+
+
+
+
+    </main>
+
+    <!-- <footer class="footer text-light ">
+
+        <div class="footer-wrap bg-dark ">
+            <div class="container first_class bg-dark">
+                <div class="row ">
+                    <div class="col-md-4 col-sm-6 ">
+                        <h3>BE THE FIRST TO KNOW</h3>
+                        <p>Get all the latest information on Triedge Services, Events, Jobs
+                            and Fairs. Sign up for our newsletter today.</p>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <form class="newsletter">
+                            <input type="text" placeholder="Email Address">
+                            <button class="newsletter_submit_btn" type="submit"><i
+                                    class="fa fa-paper-plane"></i></button>
+                        </form>
+
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="col-md-12">
+                            <div class="standard_social_links">
+                                <div>
+                                    <li class="round-btn btn-facebook">
+                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+
+                                    </li>
+                                    <li class="round-btn btn-linkedin">
+                                        <a href="#"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+
+                                    </li>
+                                    <li class="round-btn btn-twitter">
+                                        <a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+
+                                    </li>
+                                    <li class="round-btn btn-instagram">
+                                        <a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+
+                                    </li>
+                                    <li class="round-btn btn-whatsapp">
+                                        <a href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+
+                                    </li>
+                                    <li class="round-btn btn-envelop"><a href="#"><i class="fa fa-envelope"
+                                                aria-hidden="true"></i></a>
+
+                                    </li>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="col-md-12">
+                            <h3 style="text-align: right;">Stay Connected</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="second_class ">
+                <div class="container second_class_bdr bg-dark">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6">
+
+                            <div class="footer-logo"><img src="http://localhost/lrn/img/footer_logo.png" alt="logo">
+                            </div>
+                            <p>Your one-stop career platform to find Jobs, Internships, Professional Trainings,
+                                Projects, and Volunteering Opportunities.</p>
+                        </div>
+                        <div class="col-md-2 col-sm-6">
+                            <h3>Quick LInks</h3>
+                            <ul class="footer-links">
+                                <li><a href="#">Home</a>
+                                </li>
+                                <li><a href="#">About us</a>
+                                </li>
+                                <li><a href="#">Triedge Partners</a>
+                                </li>
+                                <li><a href="#">Contact Us</a>
+                                </li>
+                                <li><a href="#" target="_blank">Terms &amp; Conditions</a>
+                                </li>
+                                <li><a href="#" target="_blank">Privacy Policy</a>
+                                </li>
+                                <li><a href="#">Sitemap</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <h3>OUR SERVICES</h3>
+                            <ul class="footer-category">
+                                <li><a href="#">Fresher Jobs</a>
+                                </li>
+                                <li><a href="#">InternEdge - Internships &amp; Projects </a>
+                                </li>
+                                <li><a href="#">Resume Edge - Resume Writing Services</a>
+                                </li>
+                                <li><a href="#">Readers Galleria - Curated Library</a>
+                                </li>
+                                <li><a href="#">Trideus - Campus Ambassadors</a>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <h3>triedge Events</h3>
+                            <ul class="footer-links">
+                                <li><a href="#">Triedge Events</a>
+                                </li>
+
+                                <li><a href="#">Jobs &AMP; Internship Fair 2019</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="container-fluid">
+                    <div class="copyright"> Copyright 2019 | All Rights Reserved by TRIEDGE Solutions Pvt. Ltd.</div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+    </footer> -->
+
+
+    <script src="/js/index.js" type="module"> </script>
+
+
+    <script>
+        function openCity(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</body>
+
+</html>l

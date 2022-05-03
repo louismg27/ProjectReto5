@@ -1,0 +1,78 @@
+  .foods {
+    position: relative;
+    /* background-image: url("https://fondosmil.com/fondo/57521.jpg");
+    background-size: cover; */
+    min-height: 100vh;
+    padding: var(--padding-section);
+    box-sizing: border-box;
+  }
+  
+  .foods::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2.5rem;
+    background-image: linear-gradient(var(--primary-theme-color), transparent);
+  }
+  
+  .foods__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    max-width: var(--max-width-container);
+    margin: auto;
+    padding: var(--padding-container);
+  }
+  
+  .foods__title {
+    margin: 0;
+  }
+  
+  .foods__buscador {
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 0 0.125rem var(--primary-shadow-color), 0 0 0 0.25rem var(--primary-shadow-color);
+    /* background-color: transparent; */
+    padding: 0.75rem;
+    transition: var(--all-transitions);
+  }
+  
+  .foods__buscador:hover {
+    box-shadow:
+      0 0 0 0.25rem var(--primary-highlight-color),
+      0 0 0.5rem 0 var(--secondary-highlight-color),
+      0 0 0.75rem 0 var(--secondary-highlight-color);
+  }
+  
+  .foods__me-container {
+    display: grid;
+    gap: 2rem;
+  }
+  
+ 
+
+  .foods__me-title {
+    font-size: 2rem;
+    text-align: center;
+    padding: 0 1rem;
+    margin: 0;
+  }
+
+ 
+
+  @media (min-width: 854px) {
+    :root {
+      --padding-container: 0 0.75em;
+    }
+   
+    .foods__me-container {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+
+
+
