@@ -114,52 +114,6 @@
 
 
 
-        /* Style the tab */
-        .tab {
-            overflow: hidden;
-            border: 1px solid #2b2727;
-            background-color: #1a1818a2;
-            border-radius: 10px;
-            height: 40px;
-        }
-
-        /* Style the buttons inside the tab */
-        .tab button {
-            background-color: inherit;
-            float: left;
-            border: none;
-            outline: none;
-            cursor: pointer;
-            padding: 9px 16px;
-            transition: 0.3s;
-            font-size: 16px;
-            font-weight: bold;
-            color: rgb(255, 255, 255);
-            height: 40px;
-        }
-
-        /* Change background color of buttons on hover */
-        .tab button:hover {
-            /* background-color:  #94c1e4; */
-            border: none;
-            border-bottom: 0px solid transparent;
-            color: rgb(243, 54, 54);
-
-        }
-
-        /* Create an active/current tablink class */
-        .tab button.active {
-            background-color: rgb(211, 76, 76);
-            border: 1px solid #ff8e8e;
-        }
-
-        /* Style the tab content */
-        .tabcontent {
-            display: none;
-            padding: 6px 12px;
-            border: 1px solid #ccc;
-            border-top: none;
-        }
     </style>
 </head>
 
@@ -176,11 +130,13 @@
             <div class="foods__container">
 
 
-
                 <div class="tab">
-                    <button class="tablinks" onclick="openCity(event, 'London')">London</button>
-                    <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-                    <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+                    <button class="tablinks" onclick="openCity(event, 'London')">Pizza</button>
+                    <button class="tablinks" onclick="openCity(event, 'Paris')">Detroit</button>
+                    <button class="tablinks" onclick="openCity(event, 'Tokyo')">Salads</button>
+                    <button class="tablinks" onclick="openCity(event, 'London')">Sides</button>
+                    <button class="tablinks" onclick="openCity(event, 'Paris')">Lunch</button>
+                    <button class="tablinks" onclick="openCity(event, 'Tokyo')">Desserts</button>
                 </div>
 
 
@@ -203,57 +159,13 @@
 
 
                     <div class="foods__me-container" id="foods3container"></div>
-                  
-
-
-                </div>
-
-
-
-
-                <div class="container py-1">
-
-                    <!-- End -->
-                    <div class="p-2 bg-white rounded shadow mb-2">
-                        <!-- Rounded tabs -->
-                        <ul id="myTab" role="tablist"
-                            class="nav nav-tabs nav-pills flex-column flex-sm-row text-center bg-light border-0 rounded-nav">
-                            <li class="nav-item flex-sm-fill">
-                                <a id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
-                                    aria-selected="false"
-                                    class="nav-link border-0 text-uppercase font-weight-bold active">Home</a>
-                            </li>
-                            <li class="nav-item flex-sm-fill">
-                                <a id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
-                                    aria-selected="false"
-                                    class="nav-link border-0 text-uppercase font-weight-bold">Profile</a>
-                            </li>
-                            <li class="nav-item flex-sm-fill">
-                                <a id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
-                                    aria-selected="false"
-                                    class="nav-link border-0 text-uppercase font-weight-bold">Contact</a>
-                            </li>
-                        </ul>
-
-                        <div id="myTabContent" class="tab-content">
-                            <div id="home" role="tabpanel" aria-labelledby="home-tab" class="tab-pane fade px-4 py-5">
-                                <div class="foods__me-container" id="foods1container"></div>
-                            </div>
-                            <div id="profile" role="tabpanel" aria-labelledby="profile-tab"
-                                class="tab-pane fade px-4 py-5">
-                                <div class="foods__me-container" id="foods2container"></div>
-                            </div>
-                            <div id="contact" role="tabpanel" aria-labelledby="contact-tab"
-                                class="tab-pane fade px-4 py-5">
-                                <div class="foods__me-container" id="foods3container"></div>
-                            </div>
-                        </div>
-                        <!-- End rounded tabs -->
-                    </div>
 
 
 
                 </div>
+
+
+
 
 
 
@@ -400,24 +312,9 @@
     </footer> -->
 
 
-    <script src="/js/index.js" type="module"> </script>
+    <script src="/js/index.js" type="module"> </script> 
 
-
-    <script>
-        function openCity(evt, cityName) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-            document.getElementById(cityName).style.display = "block";
-            evt.currentTarget.className += " active";
-        }
-    </script>
+    <script src="/js/tabs.js">    </script>
 </body>
 
 </html>l
